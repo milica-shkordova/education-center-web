@@ -1,0 +1,101 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.container-full {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+
+    section {
+        background-color: var.$background-color-form;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: var.$gutter-base * 2, math.div(var.$gutter-base, 2);
+
+        h1 {
+            font-size: var.$heading-size-big;
+
+            @include mix.mobile-l-styles {
+                font-size: var.$heading-size-base;
+            }
+        }
+
+        form {
+            width: 60%;
+            display: flex;
+            flex-wrap: wrap;
+
+            @include mix.tablet-styles {
+                width: 90%;
+            }
+
+            .form-box {
+                flex: 0 0 50%;
+                display: flex;
+                flex-direction: column;
+                padding: math.div(var.$gutter-base, 3);
+
+                @include mix.tablet-styles {
+                    flex: 0 0 100%;
+                }
+
+                label {
+                    font-weight: var.$font-weight-bold;
+                }
+
+                input {
+                    padding: math.div(var.$gutter-base, 1.5);
+                    border-radius: math.div(var.$gutter-base, 5);
+                    border: none;
+
+                    &::placeholder {
+                        font-style: italic;
+                        color: rgb(173, 166, 166);
+                    }
+
+                    &:focus {
+                        outline: 1px solid red;
+                    }
+                }
+
+                .valid {
+                    display: none;
+                    color: var.$text-color-valid;
+                }
+
+                .invalid {
+                    display: none;
+                    color: var.$text-color-invalid;
+                }
+
+                .btn {
+                    @extend %btn;
+                    padding: math.div(var.$gutter-base, 1.5);
+                    margin-top: math.div(var.$gutter-base, 1.25);
+                    cursor: pointer;
+                }
+
+                select {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding: math.div(var.$gutter-base, 1.5);
+                    border-radius: math.div(var.$gutter-base, 5);
+                    border: none;
+                    cursor: pointer;
+                    background-color: var.$text-color-secondary;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}

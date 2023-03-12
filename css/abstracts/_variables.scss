@@ -1,0 +1,52 @@
+@use "sass:math";
+
+@function rem-calc($size) {
+    @return (math.div($size, 16)) * 1rem;
+}
+
+// Font settings
+$font-family-base: "Roboto", sans-serif;
+
+$font-size-extra-small: rem-calc(11);
+$font-size-small: rem-calc(13);
+$font-size-base: rem-calc(16);
+$font-size-medium: rem-calc(18);
+$font-size-big: rem-calc(24);
+
+$heading-size-small: rem-calc(24);
+$heading-size-medium: rem-calc(30);
+$heading-size-base: rem-calc(36);
+$heading-size-big: rem-calc(48);
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-bolder: 900;
+
+$line-height-base: 1.5;
+$line-height-small: 1.25;
+
+// Size settings
+$gutter-base: rem-calc(30);
+
+// Border settings
+$border-width-base: rem-calc(1);
+$border-radius-base: rem-calc(4);
+$border-radius-circle: 50%;
+
+// Color settings
+$text-color-primary: rgb(0, 0, 0);
+$text-color-secondary: rgb(255, 255, 255);
+$text-color-tertiary: #373640;
+$text-color-valid: #008000;
+$text-color-invalid: #f20505;
+
+$background-color-main: #fff;
+$background-color-base: #f2f2f2;
+$background-color-primary: #f2c230;
+$background-color-secondary: #373640;
+$background-color-tertiary: #f20505;
+$background-color-quaternary: #f24141;
+$background-color-form: #eec54a;
+$background-color-hover-cards: #ffa07a;

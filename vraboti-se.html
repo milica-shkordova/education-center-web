@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Vraboti se</title>
+        <meta charset="utf-8" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/main.css" />
+        <script
+            src="https://kit.fontawesome.com/3dcc43e145.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <!-- nav-bar -->
+        <div class="container-full">
+            <nav>
+                <div class="inner-nav">
+                    <a href="index.html" class="logo">
+                        <img src="images/Logo.png" alt="logo-img" />
+                        <p>brainster</p>
+                    </a>
+
+                    <ul>
+                        <li>
+                            <a
+                                href="https://brainster.co/marketing"
+                                target="_blank"
+                                >Академија за маркетинг</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://brainster.co/front-end/"
+                                target="_blank"
+                                >Академија за програмирање</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://brainster.co/data-science/"
+                                target="_blank"
+                                >Академија за data science</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="https://brainster.co/graphic-design/"
+                                target="_blank"
+                                >Академија за дизајн</a
+                            >
+                        </li>
+                    </ul>
+
+                    <a href="#" class="btn">Вработи наш студент</a>
+
+                    <div class="hamburger-menu">
+                        <div class="mobile-menu">
+                            <ul id="mobile-links">
+                                <li>
+                                    <a
+                                        href="https://brainster.co/marketing"
+                                        target="_blank"
+                                        >Академија за маркетинг</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://brainster.co/front-end/"
+                                        target="_blank"
+                                        >Академија за програмирање</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://brainster.co/data-science/"
+                                        target="_blank"
+                                        >Академија за data science</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://brainster.co/graphic-design/"
+                                        target="_blank"
+                                        >Академија за дизајн</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="vraboti-se.html" class="btn">Вработи наш студент</a>
+                                </li>
+                            </ul>
+                            <a
+                                href="javascript:void(0);"
+                                class="icon"
+                                onclick="myFunction()"
+                            >
+                                <i class="fa-solid fa-bars"></i>
+                            </a>
+                        </div>                   
+                </div>
+            </nav>
+            <!-- forms -->
+            <section>
+                <h1>Вработи студенти</h1>
+                <form name="myForm" onsubmit="return validateForm()">
+                    <div class="form-box">
+                        <label for="imeprezime">Име и презиме</label>
+                        <input
+                            type="text"
+                            id="imeprezime"
+                            name="imeprezime"
+                            placeholder="Вашето име и презиме"
+                        />
+                        <p id="nameError" class="invalid">
+                            Ве молиме внесете ваше име и презиме
+                        </p>
+                        <p id="nameValid" class="valid">
+                            Внесените податоци се валидни
+                        </p>
+                    </div>
+
+                    <div class="form-box">
+                        <label for="kompanija">Име на компанија</label>
+                        <input
+                            type="text"
+                            id="kompanija"
+                            name="kompanija"
+                            placeholder="Име на вашата компанија"
+                        />
+                        <p id="kompanijaError" class="invalid">
+                            Ве молиме внесете име на компанијата
+                        </p>
+                        <p id="kompanijaValid" class="valid">
+                            Внесените податоци се валидни
+                        </p>
+                    </div>
+
+                    <div class="form-box">
+                        <label for="email">Контакт имејл</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Контакт имејл на вашата компанија"
+                        />
+                        <p id="emailError" class="invalid">
+                            Ве молиме внесете вашата е-мејл адреса
+                        </p>
+                        <p id="emailValid" class="valid">
+                            Внесените податоци се валидни
+                        </p>
+                    </div>
+
+                    <div class="form-box">
+                        <label for="telefon">Контакт телефон</label>
+                        <input
+                            type="text"
+                            id="telefon"
+                            name="telefon"
+                            placeholder="Контакт телефон на вашата компанија"
+                        />
+                        <p id="telefonError" class="invalid">
+                            Ве молиме внесете контакт телефон
+                        </p>
+                        <p id="telefonValid" class="valid">
+                            Внесените податоци се валидни
+                        </p>
+                    </div>
+
+                    <div class="form-box">
+                        <label for="select">Тип на студенти</label>
+                        <select name="select" id="select">
+                            <option value="Изберете тип на студент">
+                                Изберете тип на студент
+                            </option>
+                            <option value="Студенти од маркетинг">
+                                Студенти од маркетинг
+                            </option>
+                            <option value="Студенти од програмирање">
+                                Студенти од програмирање
+                            </option>
+                            <option value="Студенти од data science">
+                                Студенти од data science
+                            </option>
+                            <option value="Студенти од дизајн">
+                                Студенти од дизајн
+                            </option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-box">
+                        <button type="submit" class="btn">Испрати</button>
+                    </div>
+                </form>
+            </section>
+            <!-- footer -->
+            <footer>
+                <p>Изработено со &#128151; од студентите од Brainster</p>
+            </footer>
+        </div>
+        <script>
+            function validateForm() {
+                let imeprezime = document.forms["myForm"]["imeprezime"].value;
+                let email = document.forms["myForm"]["email"].value;
+                let kompanija = document.forms["myForm"]["kompanija"].value;
+                let telefon = document.forms["myForm"]["telefon"].value;
+
+                if (
+                    imeprezime == "" ||
+                    email == "" ||
+                    kompanija == "" ||
+                    telefon == ""
+                ) {
+                    if (imeprezime == "") {
+                        document.getElementById("nameError").style.display =
+                            "block";
+                    } else {
+                        document.getElementById("nameError").style.display =
+                            "none";
+                        document.getElementById("nameValid").style.display =
+                            "block";
+                    }
+
+                    if (email == "") {
+                        document.getElementById("emailError").style.display =
+                            "block";
+                    } else {
+                        document.getElementById("emailError").style.display =
+                            "none";
+                        document.getElementById("emailValid").style.display =
+                            "block";
+                    }
+
+                    if (kompanija == "") {
+                        document.getElementById(
+                            "kompanijaError"
+                        ).style.display = "block";
+                    } else {
+                        document.getElementById(
+                            "kompanijaError"
+                        ).style.display = "none";
+                        document.getElementById(
+                            "kompanijaValid"
+                        ).style.display = "block";
+                    }
+
+                    if (telefon == "") {
+                        document.getElementById("telefonError").style.display =
+                            "block";
+                    } else {
+                        document.getElementById("telefonError").style.display =
+                            "none";
+                        document.getElementById("telefonValid").style.display =
+                            "block";
+                    }
+                    return false;
+                }
+                return true;
+            }
+
+               // hamburger-menu 
+            const hamburger = document.getElementById("mobile-links");
+            hamburger.style.display = "none";
+
+            function myFunction() {
+                
+                if (hamburger.style.display === "block") {
+                    hamburger.style.display = "none";
+                 } else {
+                    hamburger.style.display = "block";
+                }
+
+            }
+        </script>
+    </body>
+</html>

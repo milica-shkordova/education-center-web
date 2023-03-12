@@ -1,0 +1,76 @@
+@use "./variables" as var;
+@use "sass:math";
+
+// RESPONSIVE DESIGN MIXINS
+@mixin four-k-styles {
+    @media (max-width: 2560px) {
+        @content;
+    }
+}
+
+@mixin laptop-l-styles {
+    @media (max-width: 1440px) {
+        @content;
+    }
+}
+
+@mixin laptop-m-styles {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin tablet-styles {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile-l-styles {
+    @media (max-width: 425px) {
+        @content;
+    }
+}
+
+@mixin mobile-m-styles {
+    @media (max-width: 375px) {
+        @content;
+    }
+}
+
+@mixin mobile-s-styles {
+    @media (max-width: 320px) {
+        @content;
+    }
+}
+
+// EXTENDS
+%section {
+    padding-top: (var.$gutter-base * 2);
+    padding-bottom: (var.$gutter-base * 2);
+
+    @include tablet-styles {
+        padding-top: (var.$gutter-base);
+        padding-bottom: (var.$gutter-base);
+    }
+}
+
+%wrap {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+%btn {
+    background-color: var.$background-color-tertiary;
+    color: var.$text-color-secondary;
+    font-weight: var.$font-weight-bold;
+    font-size: var.$font-size-small;
+    padding: math.div(var.$gutter-base, 3.5) math.div(var.$gutter-base, 1.2);
+    border-radius: var.$border-radius-base;
+    border: none;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    display: block;
+    text-align: center;
+}

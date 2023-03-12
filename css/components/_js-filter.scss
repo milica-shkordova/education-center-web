@@ -1,0 +1,69 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.filter-menu {
+    display: flex;
+
+    button {
+        flex: 0 0 33.33%;
+        background-color: var.$background-color-secondary;
+        color: var.$text-color-secondary;
+        font-weight: var.$font-weight-bold;
+        font-size: var.$font-size-base;
+        text-align: left;
+        border: none;
+        padding: var.$gutter-base var.$gutter-base * 1.666;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        @include mix.tablet-styles {
+            font-size: var.$font-size-small;
+            padding: var.$gutter-base * 2 math.div(var.$gutter-base, 6)
+                var.$gutter-base * 2 math.div(var.$gutter-base, 3);
+        }
+
+        @include mix.mobile-l-styles {
+            font-size: var.$font-size-small;
+            padding: math.div(var.$gutter-base, 3)
+                math.div(var.$gutter-base, 1.5) math.div(var.$gutter-base, 3)
+                var.$gutter-base;
+        }
+
+        &:not(:last-child) {
+            border-right: 1px solid rgb(80, 75, 75);
+
+            @include mix.mobile-l-styles {
+                border-right: none;
+                border-bottom: 1px solid rgb(80, 75, 75);
+            }
+        }
+
+        &.selected {
+            background-color: var.$background-color-tertiary;
+            color: var.$text-color-tertiary;
+        }
+
+        i {
+            flex: 0 0 20%;
+            color: var.$text-color-tertiary;
+            font-size: var.$font-size-big;
+            text-align: center;
+
+            @include mix.tablet-styles {
+                font-size: var.$font-size-base;
+                flex: 0 0 15%;
+            }
+
+            @include mix.mobile-l-styles {
+                margin-left: 15%;
+            }
+        }
+    }
+
+    @include mix.mobile-l-styles {
+        flex-direction: column;
+    }
+}

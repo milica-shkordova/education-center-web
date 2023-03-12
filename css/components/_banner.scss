@@ -1,0 +1,53 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.animation {
+    background: linear-gradient(rgba(77, 72, 72, 0.7), rgba(48, 46, 46, 0.8)),
+        url(../../images/banner-pic1.jpg);
+    height: 60vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include mix.tablet-styles {
+        height: 40vh;
+    }
+
+    @include mix.mobile-l-styles {
+        height: 25vh;
+    }
+
+    svg text {
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 10px;
+        stroke: #c29a2d;
+        font-size: var.$gutter-base * 5;
+        font-weight: var.$font-weight-medium;
+        stroke-width: 3;
+        animation: textAnimate 8s infinite alternate;
+        cursor: default;
+
+        @include mix.tablet-styles {
+            font-size: var.$gutter-base * 3.333;
+        }
+
+        @include mix.mobile-l-styles {
+            font-size: var.$gutter-base * 2.333;
+        }
+    }
+
+    @keyframes textAnimate {
+        0% {
+            stroke-dasharray: 0 50%;
+            stroke-dashoffset: 20%;
+            fill: hsl(190, 24%, 15%);
+        }
+
+        100% {
+            stroke-dasharray: 50% 0;
+            stroke-dashoffset: -20%;
+            fill: hsla(189, 68%, 75%, 0%);
+        }
+    }
+}

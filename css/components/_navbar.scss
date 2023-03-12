@@ -1,0 +1,158 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+nav {
+    background-color: var.$background-color-primary;
+
+    .inner-nav {
+        color: var.$text-color-primary;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: math.div(var.$gutter-base, 1.5);
+        padding-bottom: math.div(var.$gutter-base, 1.5);
+        @extend %wrap;
+
+        .logo {
+            flex: 0 0 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+
+            img {
+                flex: 0 0 auto;
+                margin-bottom: 2px;
+                width: 35%;
+
+                @include mix.tablet-styles {
+                    width: 45%;
+                }
+            }
+
+            p {
+                flex: 0 0 auto;
+                text-transform: uppercase;
+                font-size: var.$font-size-extra-small;
+                font-weight: var.$font-weight-bold;
+                color: var.$text-color-primary;
+                margin-bottom: 0;
+            }
+        }
+
+        ul {
+            flex: 0 1 80%;
+            padding: 0 math.div(var.$gutter-base, 2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 0;
+
+            li {
+                a {
+                    color: var.$text-color-primary;
+                    font-size: var.$font-size-small;
+                    font-weight: var.$font-weight-bold;
+                    text-decoration: none;
+                    padding-bottom: 2px;
+                    background: linear-gradient(to right, (#f2c230), (#f2c230)),
+                        linear-gradient(
+                            to right,
+                            rgb(112, 46, 46),
+                            rgb(106, 134, 55),
+                            rgb(119, 122, 126)
+                        );
+                    background-size: 100% 3px, 0 3px;
+                    background-position: 100% 100%, 0 100%;
+                    background-repeat: no-repeat;
+                    transition: background-size 500ms;
+
+                    &:hover {
+                        background-size: 0 3px, 100% 3px;
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-right: var.$gutter-base * 1.66;
+                }
+            }
+
+            @include mix.tablet-styles {
+                display: none;
+            }
+        }
+
+        .btn {
+            @extend %btn;
+            flex: 0 0 auto;
+            display: inline-block;
+
+            @include mix.tablet-styles {
+                display: none;
+            }
+        }
+
+        .hamburger-menu {
+            .mobile-menu {
+                ul {
+                    display: none;
+
+                    @include mix.tablet-styles {
+                        position: absolute;
+                        top: var.$gutter-base * 2.966;
+                        right: 0;
+                        background-color: var.$background-color-secondary;
+                        padding: math.div(var.$gutter-base, 6)
+                            math.div(var.$gutter-base, 2)
+                            math.div(var.$gutter-base, 1.5);
+                        z-index: 10;
+
+                        a {
+                            color: var.$text-color-secondary;
+                            padding: math.div(var.$gutter-base, 2) 0px;
+                            background: none;
+                            display: inline-block;
+                        }
+
+                        .btn {
+                            background-color: var.$background-color-tertiary;
+                            color: var.$text-color-secondary;
+                            font-weight: var.$font-weight-bold;
+                            font-size: var.$font-size-small;
+                            padding: math.div(var.$gutter-base, 4)
+                                math.div(var.$gutter-base, 2);
+                            border-radius: var.$border-radius-base;
+                            border: none;
+                            text-decoration: none;
+                            letter-spacing: 0.5px;
+                            display: inline-block;
+                        }
+                    }
+
+                    @include mix.mobile-l-styles {
+                        top: var.$gutter-base * 2.833;
+                        display: block;
+                        width: 100%;
+                        height: calc(100vh - var.$gutter-base * 2.833);
+
+                        a {
+                            padding: math.div(var.$gutter-base, 1.2) 0;
+                        }
+                    }
+                }
+            }
+
+            .icon {
+                display: none;
+
+                @include mix.tablet-styles {
+                    display: inline-block;
+                    color: var.$text-color-primary;
+                    font-size: var.$font-size-big;
+                }
+            }
+        }
+    }
+}
